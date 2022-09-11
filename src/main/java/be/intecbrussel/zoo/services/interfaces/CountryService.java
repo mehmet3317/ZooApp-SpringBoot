@@ -8,4 +8,5 @@ public interface CountryService {
 
     List<Country> getAllCountries();
     Country getCountryByName(String countryName);
+    void createCountry(Country country);
 }
