@@ -7,5 +7,5 @@ import java.util.List;
 public interface CountryService {
 
     List<Country> getAllCountries();
-    void getCountryByName(String countryName);
+    Country getCountryByName(String countryName);
 }
