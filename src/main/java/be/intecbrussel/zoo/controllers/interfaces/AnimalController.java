@@ -7,4 +7,5 @@ public interface AnimalController {
 
     String seeAllAnimalsByCountry(Model model, String countryName);
     String addAnimal(String animalName, String countryName);
+    String deleteAnimal(long animalId);
 }
