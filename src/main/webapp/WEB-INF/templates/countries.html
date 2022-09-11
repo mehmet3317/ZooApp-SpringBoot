@@ -30,6 +30,15 @@
         <li><button>country 2</button></li>
         <li><button>country 3</button></li>
     </ol>
+    
+       <form method= "post" th:action = @{/addCountry}>
+
+        <input type="text" name="countryName" th:text = ${country.countryName}>
+
+        <input type="submit" value="create">
+
+
+    </form>
 
 
 
