@@ -33,7 +33,8 @@
     
        <form method= "post" th:action = @{/addCountry}>
 
-        <input type="text" name="countryName" th:text = ${country.countryName}>
+        <input type="text" name="countryName" th:text = ${country.countryName}> <br>
+           <input type="text" name="countryName" th:text = ${country.continent}><br>
 
         <input type="submit" value="create">
 
