@@ -5,6 +5,6 @@ import be.intecbrussel.zoo.data.Country;
 
 public interface AnimalController {
 
-    String seeAllAnimalsByCountry(Model model, Country country);
+    String seeAllAnimalsByCountry(Model model, String countryName);
     String addAnimal(String animalName, String countryName);
 }
