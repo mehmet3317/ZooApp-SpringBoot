@@ -18,7 +18,8 @@
 
 
 
-    <pre id="quote">"Animals"</pre>
+    <pre id="quote">"Animals from [[${country.countryName}]]" </pre>
+    <a th:href="@{/countries}"> BACK </a>
 
 
 
@@ -26,9 +27,9 @@
 
 
     <ul>
-        <li>animal 1 <button>Delete</button></li>
-        <li>animal 2 <button>Delete</button></li>
-        <li>animal 3 <button>Delete</button></li>
+        <a>animal 1 <button>Delete</button></a>
+        <a>animal 2 <button>Delete</button></a>
+        <a>animal 3 <button>Delete</button></a>
     </ul>
 
     <form method= "post" th:action = @{/addAnimal/{c}(c=${animal.country.countryName})}>
