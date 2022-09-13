@@ -4,6 +4,9 @@ public class Country {
 
     private String countryName;
     private String continent;
+    
+    public Country() {
+    }
 
     public Country(String countryName) {
         this.countryName = countryName;
