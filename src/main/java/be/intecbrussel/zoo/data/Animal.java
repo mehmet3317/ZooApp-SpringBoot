@@ -1,9 +1,18 @@
 package be.intecbrussel.zoo.data;
 
-public class Animal {
+import javax.persistence.*;
 
+
+@Entity
+@Table(name = "animal")
+public class Animal {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    @Column(name = "animalName", nullable = false)
     private String animalName;
+
+    @ManyToOne
     private Country country;
 
     public Animal() {

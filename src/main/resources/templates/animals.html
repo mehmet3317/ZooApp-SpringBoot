@@ -22,8 +22,11 @@
     <a th:href="@{/countries}"> BACK </a>
 
 
+    <tr th:each = "animal:${animals}">
+        <td th:text = "${animals}"></td><br>
+    </tr>
 
-
+    </ul>
 
 
     <ul>
@@ -34,7 +37,7 @@
 
     <form method= "post" th:action = @{/addAnimal/{c}(c=${animal.country.countryName})}>
 
-        <input type="text" name="animalName" th:text = ${animal.animalName}>
+        <input type="text" name="animalName" th:text = "*{animal.animalName}">
 
         <input type="submit" value="create">
 
