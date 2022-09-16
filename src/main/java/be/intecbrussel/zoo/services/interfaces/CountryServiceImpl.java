@@ -2,6 +2,7 @@ package be.intecbrussel.zoo.services.interfaces;
 
 import be.intecbrussel.zoo.data.Country;
 import be.intecbrussel.zoo.repositories.CountryRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,6 +14,7 @@ public class CountryServiceImpl implements CountryService{
 
     private CountryRepository countryRepository;
 
+    @Autowired
     public CountryServiceImpl(CountryRepository countryRepository) {
         this.countryRepository = countryRepository;
     }
@@ -24,7 +26,10 @@ public class CountryServiceImpl implements CountryService{
 
     @Override
     public Country getCountryByName(String countryName) {
-        Optional optional = countryRepository.findById(Long.valueOf(countryName));
+
+
+
+        Optional optional = countryRepository.findById(countryName);
         if (optional.isPresent()){
             return (Country)optional.get();
         }

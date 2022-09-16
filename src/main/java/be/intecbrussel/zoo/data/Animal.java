@@ -9,7 +9,7 @@ public class Animal {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    @Column(name = "animalName", nullable = false)
+    //@Column(name = "animalName", nullable = false)
     private String animalName;
 
     @ManyToOne

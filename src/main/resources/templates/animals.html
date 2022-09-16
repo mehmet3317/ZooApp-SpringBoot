@@ -16,17 +16,14 @@
 
 <div class="main">
 
+    <pre id="quote">"Animals from <td th:text = "${countryName}">" </pre>
 
-
-    <pre id="quote">"Animals from [[${country.countryName}]]" </pre>
-    <a th:href="@{/countries}"> BACK </a>
+    <a th:href="@{/countries}"> BACK </a> <br>
 
 
     <tr th:each = "animal:${animals}">
-        <td th:text = "${animals}"></td><br>
+        <td th:text = "${animal.animalName}"> animals</td><button>Delete</button><br>
     </tr>
-
-    </ul>
 
 
     <ul>
@@ -35,9 +32,10 @@
         <a>animal 3 <button>Delete</button></a>
     </ul>
 
-    <form method= "post" th:action = @{/addAnimal/{c}(c=${animal.country.countryName})}>
 
-        <input type="text" name="animalName" th:text = "*{animal.animalName}">
+   <form method= "post" th:action = "@{/animals/{countryName}(countryName=${countryName})}">
+
+        <input type="text" name="animalName" th:text = "*{animalName}"> <br>
 
         <input type="submit" value="create">
 
@@ -46,6 +44,54 @@
 
 
 
+
+    <!--/* This code will be removed at thymeleaf parsing time!
+
+
+
+      <form method= "post" th:action = @{/addAnimal/{c}(c=${animal.country.countryName})}>
+
+        <input type="text" name="animalName" th:text = "*{animal.animalName}">
+
+        <input type="submit" value="create">
+
+
+    </form>
+
+// calisan form addAnimal
+
+<form th:action="@{/animals}"  method="POST">
+
+        <input type="text" name="animalName" th:text = "*{animalName}"> <br>
+
+        <input type="submit" th:field = "*{animalName}" value="create">
+
+
+    </form>
+
+// bu hali ile null olsa da kaydediyor
+
+  <form method= "post" th:action = @{/animals/{countryName}(countryName=${countryName})}>
+
+        <input type="text" name="animalName" th:text = "*{animalName}"> <br>
+
+        <input type="submit" value="create">
+
+
+    </form>
+
+     <form method= "post" th:action = "@{/animals/{countryName}(countryName=${countryName})}">   bu da calisan v2
+
+        <input type="text" name="animalName" th:text = "*{animalName}"> <br>
+
+        <input type="submit" value="create">
+
+
+    </form>
+
+
+
+     */-->
 
 
 

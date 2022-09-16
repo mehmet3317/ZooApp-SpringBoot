@@ -14,7 +14,6 @@ public class AnimalServiceImpl implements AnimalService{
 
     private AnimalRepository animalRepository;
 
-
     public AnimalServiceImpl(AnimalRepository animalRepository) {
         this.animalRepository = animalRepository;
     }
@@ -27,17 +26,26 @@ public class AnimalServiceImpl implements AnimalService{
     @Override
     public List<Animal> getAnimalsByCountry(Country country) {
 
-        List<Animal> animalList = new ArrayList<>();
+       /* List<Animal> animalList = animalRepository.findAll();
+        for(Animal animal:animalList){
+            if(animal.getCountry().equals(country)){
+                return animalList;
+            }
+        }*/
+
+        List<Animal> animals = new ArrayList<>();
+        animalRepository.getAllByCountry(country)
+                .forEach(animals::add);
+
        // animalList.stream().filter(animal -> animal.getCountry().equals(country));
-        animalRepository.findAllByCountry(country)
-                .forEach(animalList::add);
-        return animalList;
+       // animalRepository.getAllByCountry(country)
+                //.forEach(animalList::add);
+        return animals;
 
     }
 
     @Override
     public void addAnimal(Animal animal) {
-
         animalRepository.save(animal);
     }
 

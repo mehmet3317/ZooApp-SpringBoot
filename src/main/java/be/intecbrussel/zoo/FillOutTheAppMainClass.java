@@ -25,15 +25,14 @@ public class FillOutTheAppMainClass implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        /*Country belgium = new Country("france");
+       /* Country belgium1 = new Country("belgium","europe");
 
-        countryRepository.save(belgium);
+        countryRepository.save(belgium1);
 
-        Animal animal1 = new Animal("lion",belgium);
+        Animal animal2 = new Animal("cat",belgium1);
 
-        animalRepository.save(animal1);
-*/
-
+        animalRepository.save(animal2);
+       */
 
     }
 }
