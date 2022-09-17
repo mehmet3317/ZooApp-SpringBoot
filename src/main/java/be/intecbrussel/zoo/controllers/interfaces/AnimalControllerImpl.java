@@ -8,10 +8,7 @@ import be.intecbrussel.zoo.services.interfaces.CountryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -53,9 +50,11 @@ public class AnimalControllerImpl implements AnimalController{
     }
 
     @Override
-    public String deleteAnimal(long animalId) {
+    @GetMapping("/animals/{countryName}/{id}")
+    public String deleteAnimal(@PathVariable Long id) {
 
+        animalService.deleteAnimal(id);
 
-        return null;
+        return "animals";  //redirect:/animals/{countryName}/{id}
     }
 }

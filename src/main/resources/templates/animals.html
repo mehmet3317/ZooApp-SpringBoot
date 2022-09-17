@@ -18,19 +18,18 @@
 
     <pre id="quote">"Animals from <td th:text = "${countryName}">" </pre>
 
-    <a th:href="@{/countries}"> BACK </a> <br>
+    <a th:href="@{/countries}"> BACK </a> <br> <br> <br>
+
+
 
 
     <tr th:each = "animal:${animals}">
-        <td th:text = "${animal.animalName}"> animals</td><button>Delete</button><br>
+        <td th:text = "${animal.animalName}"> animals</td>
+        <a th:href = "@{/animals/{countryName}/{id}(id=${animal.id})}" class = "btn btn-primary">delete</a>
+        <br>
     </tr>
 
 
-    <ul>
-        <a>animal 1 <button>Delete</button></a>
-        <a>animal 2 <button>Delete</button></a>
-        <a>animal 3 <button>Delete</button></a>
-    </ul>
 
 
    <form method= "post" th:action = "@{/animals/{countryName}(countryName=${countryName})}">
@@ -38,7 +37,6 @@
         <input type="text" name="animalName" th:text = "*{animalName}"> <br>
 
         <input type="submit" value="create">
-
 
     </form>
 
@@ -85,13 +83,30 @@
         <input type="text" name="animalName" th:text = "*{animalName}"> <br>
 
         <input type="submit" value="create">
-
-
     </form>
 
+    //delete calisan
+
+      @Override
+    @GetMapping("/animals/{countryName}/{id}")
+    public String deleteAnimal(@PathVariable Long id) {
+
+        animalService.deleteAnimal(id);
+
+        return "redirect:/animals";
+
+        ||
+
+         <tr th:each = "animal:${animals}">
+        <td th:text = "${animal.animalName}"> animals</td>
+        <a th:href = "@{/animals/{countryName}/{id}(id=${animal.id})}" class = "btn btn-primary">delete</a>
+        <br>
+    </tr>
 
 
+    }
      */-->
+
 
 
 

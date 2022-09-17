@@ -26,17 +26,6 @@
 
 
 
-
-
-
-    <ul>
-        <a>country 1</a>
-        <a>country 2</a>
-        <a>country 3</a>
-    </ul>
-
-
-
     <ul>
     <tr th:each = "country:${countries}">
         <a th:href="@{/animals/{countryName}(countryName=${country.countryName})}"><td th:text = "${country.countryName}"></td></a><br>
