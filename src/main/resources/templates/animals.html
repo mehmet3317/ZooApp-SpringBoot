@@ -25,7 +25,7 @@
 
     <tr th:each = "animal:${animals}">
         <td th:text = "${animal.animalName}"> animals</td>
-        <a th:href = "@{/animals/{countryName}/{id}(id=${animal.id})}" class = "btn btn-primary">delete</a>
+        <a th:href = "@{/animals/{countryName}/{id}(id=${animal.id}, (countryName=${countryName}))}" class = "btn btn-primary">delete</a>
         <br>
     </tr>
 
@@ -42,9 +42,9 @@
 
 
 
-
     <!--/* This code will be removed at thymeleaf parsing time!
 
+   onemli parca== <a th:href = "@{/animals/{countryName}/{id}(id=${animal.id})}" class = "btn btn-primary">delete</a>
 
 
       <form method= "post" th:action = @{/addAnimal/{c}(c=${animal.country.countryName})}>

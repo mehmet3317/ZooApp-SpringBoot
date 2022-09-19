@@ -55,6 +55,6 @@ public class AnimalControllerImpl implements AnimalController{
 
         animalService.deleteAnimal(id);
 
-        return "animals";  //redirect:/animals/{countryName}/{id}
+        return "redirect:/animals/{countryName}";  //redirect:/animals/{countryName}/{id}
     }
 }
